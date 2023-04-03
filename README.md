@@ -11,9 +11,11 @@ Attention-based LSTM for Aspect-level Sentiment Classification - https://aclanth
 An Unsupervised Neural Attention Model for Aspect Extraction - https://aclanthology.org/P17-1036/ - https://aclanthology.org/P17-1036.pdf
 
 ### 2010-2014
-Twitter Sentiment Analysis - https://arxiv.org/ftp/arxiv/papers/1509/1509.04219.pdf \
-Proximity-based sentiment analysis - https://ieeexplore.ieee.org/document/6041410 \
-Fast and accurate sentiment classification using an enhanced Naive Bayes model - https://arxiv.org/ftp/arxiv/papers/1305/1305.6143.pdf
+Multi-aspect Sentiment Analysis with Topic Models - https://ieeexplore.ieee.org/abstract/document/6137364 - https://www.cs.cornell.edu/home/cardie/papers/masa-sentire-2011.pdf \
+Weakly Supervised Joint Sentiment-Topic Detection from Text - https://ieeexplore.ieee.org/document/5710933 - https://core.ac.uk/download/pdf/12824749.pdf
+Aspect-Based Opinion Polling from Customer Reviews - https://ieeexplore.ieee.org/document/5708129 -
 
 ### Before 2010
-Thumbs up? Sentiment Classification using Machine Learning Techniques - https://arxiv.org/pdf/cs/0205070v1.pdf
+An Unsupervised Aspect-Sentiment Model for Online Reviews - https://aclanthology.org/N10-1122.pdf \
+Large-Scale Sentiment Analysis for News and Blogs - https://aclanthology.org/N10-1122.pdf \
+Sentiment analyzer: extracting sentiments about a given topic using natural language processing techniques - https://ieeexplore.ieee.org/document/1250949 - https://my.ece.utah.edu/~ece6534/Spring2015/20150423_wang/wang_supp1.pdf
