@@ -9,7 +9,6 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
 \begin{document}
-
 \title{Survey on Aspect-Based Sentiment Analysis}
 
 \author{\IEEEauthorblockN{Mohammad Ahmad}
@@ -49,7 +48,7 @@ The aim of this survey is to investigate the a small selection of papers from 4 
 \textit{\textbf{Adversarial Training for Aspect-Based Sentiment
 Analysis with BERT, A. Karimi et al, 2020.}}
 
-This paper talks about the idea of adversarial training, i.e. introducing noise or perturbations to input such that to a human it would seem as the same input with some noise but a neural network would persive that as a completely different input and may not classify it correctly. This approach has already been used for sentence classification but not in ABSA.
+This paper talks about the idea of adversarial training, i.e. introducing noise or perturbations to input such that to a human it would seem as the same input with some noise but a neural network would perceive that as a completely different input and may not classify it correctly. This approach has already been used for sentence classification but not in ABSA.
 
 The models used in this paper is are extensions of the Bidirectional Encoder Representations from Transformers (BERT) model. The input sentences first go through a BERT word embedding layer to encode them. The encoded words are then passed through a BERT encoder following which their loss is calculated using a cross entropy loss function. After this the loss is used to calculate perturbations which are then added to the embeddings to produce input to attack the encoder and force it to give incorrect results. The adversarial loss and the normal loss are summed up to give the overall model loss, which is then minimized using backpropogation. A representation of this model is given by Figure 1. This model was used in both AE and ASC subtasks.
 
@@ -64,11 +63,11 @@ The models used in this paper is are extensions of the Bidirectional Encoder Rep
   \caption{A summary of the aims of Y. Qiang at al in this paper.}
 \end{figure*}
 
-For the AE subtask, the goal was to assign each word a label so as to specify whether it is the beginning of an aspect, inside an aspect or not in any aspect. For the ASC subtask, the output from the previous subtask is used as input (in the evaluation stage, while the actual true values are utilized in training) with the modification that each text is repeated as many times as there are aspects in it so that the setiment for each aspect can be classified separately.
+For the AE subtask, the goal was to assign each word a label so as to specify whether it is the beginning of an aspect, inside an aspect or not in any aspect. For the ASC subtask, the output from the previous subtask is used as input (in the evaluation stage, while the actual true values are utilized in training) with the modification that each text is repeated as many times as there are aspects in it so that the sentiment for each aspect can be classified separately.
 
-The hyperparameter to be optimized is the variable that controls how big the perturbations being added to the input sample are. The challenge with optimizing that was that the adversarial sample to be produced needed to be similar enough to the input to be classified as the same but also different enough from the input so as to challenge the model. The issue that the authors faced is that they were using 2 distinct datasets but the best value that they found was different for both meaning that the dataset itself influences the best value for this parameter.
+The hyper-parameter to be optimized is the variable that controls how big the perturbations being added to the input sample are. The challenge with optimizing that was that the adversarial sample to be produced needed to be similar enough to the input to be classified as the same but also different enough from the input so as to challenge the model. The issue that the authors faced is that they were using 2 distinct datasets but the best value that they found was different for both meaning that the dataset itself influences the best value for this parameter.
 
-Furthermore, as the authors were buiding upon another research on the same topic but using a post-trained BERT (BERT-PT), they had to keep many things in their paper and methodology consistent with that approach. This means that their paper is easy to compare with other approaches but it seems there was still room for further experimentation for their approach as it was constrained so as to be comparable.
+Furthermore, as the authors were building upon another research on the same topic but using a post-trained BERT (BERT-PT), they had to keep many things in their paper and methodology consistent with that approach. This means that their paper is easy to compare with other approaches but it seems there was still room for further experimentation for their approach as it was constrained so as to be comparable.
 
 
 \begin{table}[htbp]
@@ -92,9 +91,9 @@ The results were indeed an improvement upon BERT-PT and it can be said that they
 \textit{\textbf{Toward Tag-free Aspect Based Sentiment Analysis:
 A Multiple Attention Network Approach, Y. Qiang et al, 2020.}}
 
-This paper identifies the issue that datasets for ABSA need to have the aspects tagged manually, which leads to their being less relevant data available even though there is a very large number of review and opinion texts available online today. This is refered to as the cold-start problem. They propose a new Multiple-Attention Network (MAN) approach which crawls the review data from review websites to extract the tag-free review text, aspect-level ratings, and overall ratings. Their aim is to provide an end-to-end automatic solution to perform ABSA as well as to uncover the weighted contribution of each word towards the aspect-level and overall polarities. A summary of their aim is provided by Figure 2.
+This paper identifies the issue that datasets for ABSA need to have the aspects tagged manually, which leads to their being less relevant data available even though there is a very large number of review and opinion texts available online today. This is referred to as the cold-start problem. They propose a new Multiple-Attention Network (MAN) approach which crawls the review data from review websites to extract the tag-free review text, aspect-level ratings, and overall ratings. Their aim is to provide an end-to-end automatic solution to perform ABSA as well as to uncover the weighted contribution of each word towards the aspect-level and overall polarities. A summary of their aim is provided by Figure 2.
 
-The contributions of this work are combatting the cold-start for ABSA models by creating a means to produce datasets from review websites, providing 2 new datasets made from TripAdvisor, and including a means of inferring the overall sentiment from the aspect polarities by identifying the contribution of each aspect towards the overall score. The paper comments that a lot of ABSA approaches are built on SemEval Task5, and the authors want a greater use of the massive online review data being generated from e-commerce websites by alleviating the laborious process of manually tagging the available reviews.
+The contributions of this work are combating the cold-start for ABSA models by creating a means to produce datasets from review websites, providing 2 new datasets made from TripAdvisor, and including a means of inferring the overall sentiment from the aspect polarities by identifying the contribution of each aspect towards the overall score. The paper comments that a lot of ABSA approaches are built on SemEval Task5, and the authors want a greater use of the massive online review data being generated from e-commerce websites by alleviating the laborious process of manually tagging the available reviews.
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[keepaspectratio, width=0.5\textwidth]{pics/3.png}}
@@ -102,11 +101,11 @@ The contributions of this work are combatting the cold-start for ABSA models by 
 \label{fig}
 \end{figure}
 
-The authors provide 2 datasets, one for hotel ratings and the other for restaurant ratings, which they have produced by scraping reviews from TripAdvisor. As shown in Figure 3, the MAN model consists of a number of modules. In the model, the sentences are embedded into word vectors those vectors are combined with their positional information. The input is then parsed into a Bi-LSTM to produce hidden states for each word. Self-attention is then performed to produce allignment vectors for each word for each aspect which are combined with the original hidden states to produce the context vectors for each word.
+The authors provide 2 datasets, one for hotel ratings and the other for restaurant ratings, which they have produced by scraping reviews from TripAdvisor. As shown in Figure 3, the MAN model consists of a number of modules. In the model, the sentences are embedded into word vectors those vectors are combined with their positional information. The input is then parsed into a Bi-LSTM to produce hidden states for each word. Self-attention is then performed to produce alignment vectors for each word for each aspect which are combined with the original hidden states to produce the context vectors for each word.
 
-Position-aware self attention is also performed as words which are closer to an aspect will have more relevance to it usually. These arrays of vectors are also produced for each aspect. Thus we get another set of position-aware alignment vectors. These are combined with the context vectors to give the final representaions of the aspects which can then be classified. The classification is performed overall as well as on each aspect on a positive or negative class bases.
+Position-aware self attention is also performed as words which are closer to an aspect will have more relevance to it usually. These arrays of vectors are also produced for each aspect. Thus we get another set of position-aware alignment vectors. These are combined with the context vectors to give the final representations of the aspects which can then be classified. The classification is performed overall as well as on each aspect on a positive or negative class bases.
 
-Several standard pre-processing techniques, such as lemmatization, stemming, stop word removal and tokenization are used so as to reduce the number of words and to make the process more efficient. Also, the attention scores are used to derive the more important aspects from a text, which is then used to give more weightage to it when calculating the overall polarity.
+Several standard pre-processing techniques, such as lemmatization, stemming, stop word removal and tokenization are used so as to reduce the number of words and to make the process more efficient. Also, the attention scores are used to derive the more important aspects from a text, which is then used to give more weight to it when calculating the overall polarity.
 
 \begin{table}[htbp]
 \caption{Results of the model produced by Y. Qiang et al.}
@@ -128,11 +127,11 @@ From the results above we can see that the model produced sufficiently high accu
 \textit{\textbf{Aspect-based Sentiment Analysis with
 Type-aware Graph Convolutional Networks and Layer Ensemble, Y. Tian et al, 2021.}}
 
-This paper talks about a better way of using dependancy parsing in ABSA. Previous implementations have used dependancy graphs for text to assist in performing ABSA for that text, but only the dependancies have been paid attention to, not the exact type of dependancy among the words. Clearly some dependancies such as the one between a noun and a verb in a simple sentence are more important in ascertaining the polarity of an aspect within a text as compared with other dependancies that exist within that sentence. If all dependancies are treated equally, this will clearly be a disadvantageous for the model in performing ABSA.
+This paper talks about a better way of using dependency parsing in ABSA. Previous implementations have used dependency graphs for text to assist in performing ABSA for that text, but only the dependencies have been paid attention to, not the exact type of dependency among the words. Clearly some dependencies such as the one between a noun and a verb in a simple sentence are more important in ascertaining the polarity of an aspect within a text as compared with other dependencies that exist within that sentence. If all dependencies are treated equally, this will clearly be a disadvantageous for the model in performing ABSA.
 
 Additionally, this paper claims that although previous Graph Convolutional Networks (GCNs) have learned relations using multiple layers, they only use the result from the most recent layer for ABSA which leads to some being lost because different contextual information is present in different layers in an ensemble.
 
-This paper investigates a Type-Aware Graph Convolutional Network (T-GCN) with multiple layers incorporating both word relational information and dependancy type information so as to improve on the current approaches for ABSA. The overall architecture for their approach is given by Figure 4.
+This paper investigates a Type-Aware Graph Convolutional Network (T-GCN) with multiple layers incorporating both word relational information and dependency type information so as to improve on the current approaches for ABSA. The overall architecture for their approach is given by Figure 4.
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[keepaspectratio, width=0.5\textwidth]{pics/4.png}}
@@ -140,7 +139,7 @@ This paper investigates a Type-Aware Graph Convolutional Network (T-GCN) with mu
 \label{fig}
 \end{figure}
 
-First, given an input sentence, off-the-shelf toolkits are used to get the dependancy information. From this information an adjacency matrix is made to show the relation information of the dependancy graph, and relation matrix is made to show the type information, as shown in Figure 5. The sentence along with the provided aspect information is tokenized and then the resultant words are vectorized and put through a BERT to get the relevant attention information.
+First, given an input sentence, off-the-shelf toolkits are used to get the dependency information. From this information an adjacency matrix is made to show the relation information of the dependancy graph, and relation matrix is made to show the type information, as shown in Figure 5. The sentence along with the provided aspect information is tokenized and then the resultant words are vectorized and put through a BERT to get the relevant attention information.
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[keepaspectratio, width=0.5\textwidth]{pics/5.png}}
@@ -154,9 +153,52 @@ For each word, every layer incorporates information from its connected words int
 
 A fully connected layer is then used to map this output vector to the number of classes and then softmax activation is applied to predict the output sentiment for the aspect.
 
-The model showed better accuracy as compared to other famous studies operating on the same datasets. The authors also portrayed which exact studies were utilizing dependancy information in their comparision. It is interesting to note that most of the studies with higher performance were using dependancy information in some form. This points to the reasoning that exploring the direction of incorporating dependancy type information to improve ABSA models might be the direction to go in in the future. The authors have also provided evidence that usng T-GCN and ALE both have lead to some improvements in the accuracy of the models.
+The model showed better accuracy as compared to other famous studies operating on the same datasets. The authors also portrayed which exact studies were utilizing dependency information in their comparison. It is interesting to note that most of the studies with higher performance were using dependency information in some form. This points to the reasoning that exploring the direction of incorporating dependency type information to improve ABSA models might be the direction to go in in the future. The authors have also provided evidence that using T-GCN and ALE both have lead to some improvements in the accuracy of the models.
 
-\subsection{2020-2023}
+\subsection{2016-2019}
+
+\textit{\textbf{Aspect Level Sentiment Classification with Deep Memory Network, D. Tang et al, 2016.}}
+
+This paper takes inspiration from a question answering using a memory network approach to perform ABSA. The authors have described the problem as searching for a subset of relevant words given an aspect then determining the sentiment of the aspect based on those context words. They claim that their model is better than feature-based Support Vector Machines (SVMs) and attention-based Long Short Term Memory network (LSTM) architectures.
+
+A memory network is a general machine learning framework which comprises of a long-term memory component which can be read and written to and used to help with the task of prediction. A memory network consists of a memory $m$ (which is an array $m$ arrays) and four components $I$, $G$, $O$, and $R$. $I$ converts an input to internal feature representation, $G$ updates the old memory with new input, $O$ generates the output representation given the input and the current memory state, and $R$ converts the output representation to the output.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[keepaspectratio, width=0.5\textwidth]{pics/6.png}}
+\caption{A representation of the architecture of the model used by D. Tang et al in their study.}
+\label{fig}
+\end{figure}
+
+The model takes in an as input a sentence and an aspect word from that sentence. Each word is then vectorized to produce a word embedding. For the first layer the aspect vector is used as input to select vectors from the memory using attention. The output of the attention and the linearly transformed aspect vector are then combined to produce the input for the next layer. This process is then repeated as shown in Figure 6, until we can then perform a softmax activation on the final output to perform ASC for the input aspect. Like most models, this model uses backpropogation with stochastic gradient descent to train the network weights.
+
+It has become widely accepted that models with multiple layers are able to learn more abstract representations of data. That is the idea behind using multiple "hops" in the model, so that the model can learn more abstract relations between the words and the aspect to get a more accurate measure of the sentiment for an aspect.
+
+\begin{table}[htbp]
+\caption{Runtime (seconds) of each training epoch on the Sem Eval 2014 restaurant dataset. The number in the bracket is the number of hops.}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Model} & \textbf{Runtime} \\
+\hline
+LSTM & 417 \\
+TDLSTM & 490 \\
+TDLSTM + ATT & 520 \\
+\hline
+MemNet (3) & 9 \\
+MemNet (6) & 24 \\
+MemNet (9) & 29 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+Though the accuracy improvement of this work is not very substantial over the best models of this time which were attention-based LSTMs and feature-based SVMs, there was still a slight improvement in accuracy. The more important achievement of this paper is in fact the performance improvement where it takes the model mentioned above substantially less time to train each epoch as compared to the above mentioned models. This comparison is shown in Table 3. It is noticeable how this paper in 2016 was closing in to the self-attention models that were used later on in transformer based architectures.\\
+
+\textit{\textbf{Attention-based LSTM for Aspect-level Sentiment Classification, Y. Wang et al, 2016.}}
+
+
+
+\textit{\textbf{Aspect Level Sentiment Classification with Deep Memory Network, D. Tang et al, 2016.}}
 
 \section{Prepare Your Paper Before Styling}
 Before you begin to format your paper, first write and save the content as a 

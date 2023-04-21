@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.14)  16 APR 2023 17:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.14)  21 APR 2023 16:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -274,6 +274,9 @@ LaTeX Warning: Label `fig' multiply defined.
 
 LaTeX Warning: Label `fig' multiply defined.
 
+
+LaTeX Warning: Label `fig' multiply defined.
+
 )
 \openout1 = `paper.aux'.
 
@@ -314,13 +317,13 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 (/usr/local/share/miktex-texmf/tex/latex/00miktex/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 25.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 24.
 
 
 (/usr/local/share/miktex-texmf/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 25.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 24.
 
 
 (/usr/local/share/miktex-texmf/tex/latex/amsfonts/umsb.fd
@@ -329,64 +332,79 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <pics/1.png, id=1, 874.26625pt x 418.56375pt>
 File: pics/1.png Graphic file (type png)
 <use pics/1.png>
-Package pdftex.def Info: pics/1.png  used on input line 57.
+Package pdftex.def Info: pics/1.png  used on input line 56.
 (pdftex.def)             Requested size: 232.19843pt x 111.16794pt.
 <pics/2.png, id=3, 990.70125pt x 384.43625pt>
 File: pics/2.png Graphic file (type png)
 <use pics/2.png>
-Package pdftex.def Info: pics/2.png  used on input line 63.
+Package pdftex.def Info: pics/2.png  used on input line 62.
 (pdftex.def)             Requested size: 516.0pt x 200.23062pt.
  [1{/home/mahmad/.miktex/texmfs/data/fonts/map/pdftex/pdftex.map}
 
 
  <./pics/1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 90--91
+Underfull \hbox (badness 10000) in paragraph at lines 89--90
 
  []
 
 <pics/3.png, id=13, 560.0925pt x 485.815pt>
 File: pics/3.png Graphic file (type png)
 <use pics/3.png>
-Package pdftex.def Info: pics/3.png  used on input line 100.
+Package pdftex.def Info: pics/3.png  used on input line 99.
 (pdftex.def)             Requested size: 258.0pt x 223.79636pt.
 
 Underfull \vbox (badness 4832) has occurred while \output is active []
 
  [2 <./pics/2.png>]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 1
-20.
+19.
  (/home/mahmad/.miktex/texmfs/install/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
+Underfull \hbox (badness 10000) in paragraph at lines 125--126
 
  []
 
 <pics/4.png, id=18, 550.055pt x 552.0625pt>
 File: pics/4.png Graphic file (type png)
 <use pics/4.png>
-Package pdftex.def Info: pics/4.png  used on input line 138.
+Package pdftex.def Info: pics/4.png  used on input line 137.
 (pdftex.def)             Requested size: 258.0pt x 258.94713pt.
 <pics/5.png, id=19, 482.80376pt x 682.55pt>
 File: pics/5.png Graphic file (type png)
 <use pics/5.png>
-Package pdftex.def Info: pics/5.png  used on input line 146.
+Package pdftex.def Info: pics/5.png  used on input line 145.
 (pdftex.def)             Requested size: 258.0pt x 364.74925pt.
 [3 <./pics/3.png> <./pics/4.png>]
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 2
-03.
+<pics/6.png, id=25, 608.2725pt x 492.84125pt>
+File: pics/6.png Graphic file (type png)
+<use pics/6.png>
+Package pdftex.def Info: pics/6.png  used on input line 167.
+(pdftex.def)             Requested size: 258.0pt x 209.0449pt.
+ [4 <./pics/5.png> <./pics/6.png>]
+Underfull \hbox (badness 2875) in paragraph at lines 195--196
+\OT1/ptm/m/n/10 achieve-ment of this pa-per is in fact the per-for-mance
+ []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--196
+
+ []
+
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 2
+45.
 (/home/mahmad/.miktex/texmfs/install/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [4 <./pics/5.png>]
+) [5]
 LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 3
-19.
- (/home/mahmad/.miktex/texmfs/install/tex/latex/psnfss/omsptm.fd
+61.
+
+(/home/mahmad/.miktex/texmfs/install/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 319.
- [5]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 361.
+ [6]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -398,16 +416,18 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[6] (paper.aux)
+[7
+
+] (paper.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4345 strings out of 476327
- 67901 string characters out of 5794815
- 1871666 words of memory out of 5000000
- 24721 multiletter control sequences out of 15000+600000
+ 4352 strings out of 476327
+ 67997 string characters out of 5794815
+ 1870666 words of memory out of 5000000
+ 24727 multiletter control sequences out of 15000+600000
  558797 words of font info for 119 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,11n,62p,782b,318s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -422,9 +442,9 @@ a.pfb></usr/local/share/miktex-texmf/fonts/type1/urw/times/utmb8a.pfb></usr/loc
 al/share/miktex-texmf/fonts/type1/urw/times/utmbi8a.pfb></usr/local/share/mikte
 x-texmf/fonts/type1/urw/times/utmr8a.pfb></usr/local/share/miktex-texmf/fonts/t
 ype1/urw/times/utmri8a.pfb>
-Output written on paper.pdf (6 pages, 649197 bytes).
+Output written on paper.pdf (7 pages, 692193 bytes).
 PDF statistics:
- 88 PDF objects out of 1000 (max. 8388607)
+ 95 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
