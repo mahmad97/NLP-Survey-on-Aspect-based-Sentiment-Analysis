@@ -19,6 +19,8 @@ mohammad.ahmad@psu.edu}
 }
 
 \maketitle
+\thispagestyle{plain}
+\pagestyle{plain}
 
 \begin{abstract}
 This document is a model and instructions for \LaTeX.
@@ -46,7 +48,7 @@ The aim of this survey is to investigate the a small selection of papers from 4 
 \subsection{2020-2023}
 
 \textit{\textbf{Adversarial Training for Aspect-Based Sentiment
-Analysis with BERT, A. Karimi et al, 2020.}}
+Analysis with BERT, A. Karimi et al., 2020.}}
 
 This paper talks about the idea of adversarial training, i.e. introducing noise or perturbations to input such that to a human it would seem as the same input with some noise but a neural network would perceive that as a completely different input and may not classify it correctly. This approach has already been used for sentence classification but not in ABSA.
 
@@ -85,15 +87,14 @@ Furthermore, as the authors were building upon another research on the same topi
 \end{center}
 \end{table}
 
-
-The results were indeed an improvement upon BERT-PT and it can be said that they had produced the best results at the time for the given datasets.\\
+The model was trained and tested on the SemEval datasets from 2014 and 2016 which had restaurant and laptop reviews. It should be noted that many studies on AE and ASC use these datasets which makes these studies easier to compare with one another. As can be seen from Table 1, the results were indeed an improvement upon BERT-PT and it can be said that they had produced the best results at the time for the given datasets.\\
 
 \textit{\textbf{Toward Tag-free Aspect Based Sentiment Analysis:
-A Multiple Attention Network Approach, Y. Qiang et al, 2020.}}
+A Multiple Attention Network Approach, Y. Qiang et al., 2020.}}
 
 This paper identifies the issue that datasets for ABSA need to have the aspects tagged manually, which leads to their being less relevant data available even though there is a very large number of review and opinion texts available online today. This is referred to as the cold-start problem. They propose a new Multiple-Attention Network (MAN) approach which crawls the review data from review websites to extract the tag-free review text, aspect-level ratings, and overall ratings. Their aim is to provide an end-to-end automatic solution to perform ABSA as well as to uncover the weighted contribution of each word towards the aspect-level and overall polarities. A summary of their aim is provided by Figure 2.
 
-The contributions of this work are combating the cold-start for ABSA models by creating a means to produce datasets from review websites, providing 2 new datasets made from TripAdvisor, and including a means of inferring the overall sentiment from the aspect polarities by identifying the contribution of each aspect towards the overall score. The paper comments that a lot of ABSA approaches are built on SemEval Task5, and the authors want a greater use of the massive online review data being generated from e-commerce websites by alleviating the laborious process of manually tagging the available reviews.
+The contributions of this work are combating the cold-start for ABSA models by creating a means to produce datasets from review websites, providing 2 new datasets made from TripAdvisor, and including a means of inferring the overall sentiment from the aspect polarities by identifying the contribution of each aspect towards the overall score. The paper comments that a lot of ABSA approaches are built on SemEval Task 5, and the authors want a greater use of the massive online review data being generated from e-commerce websites by alleviating the laborious process of manually tagging the available reviews.
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[keepaspectratio, width=0.5\textwidth]{pics/3.png}}
@@ -125,7 +126,7 @@ Several standard pre-processing techniques, such as lemmatization, stemming, sto
 From the results above we can see that the model produced sufficiently high accuracy given the fact that the input data was unstructured and scraped off from a review website. And this paper has been successful in addressing the cold-start problem which it aimed to solve. Furthermore, it has introduced a method to build end-to-end ABSA solutions for unstructured data, which without doubt will be expanded upon in the future.\\
 
 \textit{\textbf{Aspect-based Sentiment Analysis with
-Type-aware Graph Convolutional Networks and Layer Ensemble, Y. Tian et al, 2021.}}
+Type-aware Graph Convolutional Networks and Layer Ensemble, Y. Tian et al., 2021.}}
 
 This paper talks about a better way of using dependency parsing in ABSA. Previous implementations have used dependency graphs for text to assist in performing ABSA for that text, but only the dependencies have been paid attention to, not the exact type of dependency among the words. Clearly some dependencies such as the one between a noun and a verb in a simple sentence are more important in ascertaining the polarity of an aspect within a text as compared with other dependencies that exist within that sentence. If all dependencies are treated equally, this will clearly be a disadvantageous for the model in performing ABSA.
 
@@ -139,7 +140,7 @@ This paper investigates a Type-Aware Graph Convolutional Network (T-GCN) with mu
 \label{fig}
 \end{figure}
 
-First, given an input sentence, off-the-shelf toolkits are used to get the dependency information. From this information an adjacency matrix is made to show the relation information of the dependancy graph, and relation matrix is made to show the type information, as shown in Figure 5. The sentence along with the provided aspect information is tokenized and then the resultant words are vectorized and put through a BERT to get the relevant attention information.
+First, given an input sentence, off-the-shelf toolkits are used to get the dependency information. From this information an adjacency matrix is made to show the relation information of the dependency graph, and relation matrix is made to show the type information, as shown in Figure 5. The sentence along with the provided aspect information is tokenized and then the resultant words are vectorized and put through a BERT to get the relevant attention information.
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[keepaspectratio, width=0.5\textwidth]{pics/5.png}}
@@ -153,11 +154,11 @@ For each word, every layer incorporates information from its connected words int
 
 A fully connected layer is then used to map this output vector to the number of classes and then softmax activation is applied to predict the output sentiment for the aspect.
 
-The model showed better accuracy as compared to other famous studies operating on the same datasets. The authors also portrayed which exact studies were utilizing dependency information in their comparison. It is interesting to note that most of the studies with higher performance were using dependency information in some form. This points to the reasoning that exploring the direction of incorporating dependency type information to improve ABSA models might be the direction to go in in the future. The authors have also provided evidence that using T-GCN and ALE both have lead to some improvements in the accuracy of the models.
+The model showed better accuracy as compared to other famous studies operating on the same datasets. The authors also portrayed which exact studies were utilizing dependency information in their comparison. It is interesting to note that most of the studies with higher performance were using dependency information in some form. This points to the reasoning that exploring the direction of incorporating dependency type information to improve ABSA models might be the direction to go in in the future. The authors have also provided evidence that using T-GCN and ALE both have lead to some improvements in the accuracy of the models.\\
 
 \subsection{2016-2019}
 
-\textit{\textbf{Aspect Level Sentiment Classification with Deep Memory Network, D. Tang et al, 2016.}}
+\textit{\textbf{Aspect Level Sentiment Classification with Deep Memory Network, D. Tang et al., 2016.}}
 
 This paper takes inspiration from a question answering using a memory network approach to perform ABSA. The authors have described the problem as searching for a subset of relevant words given an aspect then determining the sentiment of the aspect based on those context words. They claim that their model is better than feature-based Support Vector Machines (SVMs) and attention-based Long Short Term Memory network (LSTM) architectures.
 
@@ -165,9 +166,14 @@ A memory network is a general machine learning framework which comprises of a lo
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[keepaspectratio, width=0.5\textwidth]{pics/6.png}}
-\caption{A representation of the architecture of the model used by D. Tang et al in their study.}
+\caption{A representation of the architecture of the model used by D. Tang et al. in their study.}
 \label{fig}
 \end{figure}
+
+\begin{figure*}
+\centerline{\includegraphics[keepaspectratio, width=\textwidth]{pics/7.png}}
+  \caption{A representation of the model used by Y. Wang et al. in their study.}
+\end{figure*}
 
 The model takes in an as input a sentence and an aspect word from that sentence. Each word is then vectorized to produce a word embedding. For the first layer the aspect vector is used as input to select vectors from the memory using attention. The output of the attention and the linearly transformed aspect vector are then combined to produce the input for the next layer. This process is then repeated as shown in Figure 6, until we can then perform a softmax activation on the final output to perform ASC for the input aspect. Like most models, this model uses backpropogation with stochastic gradient descent to train the network weights.
 
@@ -194,35 +200,51 @@ MemNet (9) & 29 \\
 
 Though the accuracy improvement of this work is not very substantial over the best models of this time which were attention-based LSTMs and feature-based SVMs, there was still a slight improvement in accuracy. The more important achievement of this paper is in fact the performance improvement where it takes the model mentioned above substantially less time to train each epoch as compared to the above mentioned models. This comparison is shown in Table 3. It is noticeable how this paper in 2016 was closing in to the self-attention models that were used later on in transformer based architectures.\\
 
-\textit{\textbf{Attention-based LSTM for Aspect-level Sentiment Classification, Y. Wang et al, 2016.}}
+\textit{\textbf{Attention-based LSTM for Aspect-level Sentiment Classification, Y. Wang et al., 2016.}}
+
+This paper takes inspiration from the attention mechanism being introduced to the many domains of NLP, for example Bahdanau et al. in 2014 when they introduced it to the task of Machine Translation. This paper sought to apply those learnings to the domain of ABSA.
+
+In this paper, the authors propose an Attention-based LSTM with Aspect embeddings for the ASC task. Thus, they are proposing to add 2 new features to the traditional LSTM to improve it for the ASC task. The first is to produce a vectorized embedding for the aspect and join it to the word embeddings for each word when they are input into the LSTM. The second feature which the authors propose is an attention mechanism where the attention for all the produced hidden states is calculated with respect to the aspect that was input along with them. This process is summarized by Figure 7.
+
+The paper wanted the aspect embedding to play a role in computing the attention weights thus the aspect vector was appended to the word vectors so the hidden states have the information of the aspects as well. It was then that the attention for each hidden state was computed with the original aspect vectors. The hidden vectors are then multiplied with the corresponding softmax activated attention scores to produce a weighted hidden representation $r$. $r$ is then used to classify the sentiment of the sentence for the initial given aspect. The loss function used in this model is cross-entropy loss.
+
+This model reported better accuracy results than the other models and approaches that it was being compared with. It was tested on 2 tasks, the first where each sentence was accompanied with a set of specific aspects, and the second where there was a set of general aspects which all the sentences were run on. The model reported slightly better results than the model it was being compared against but it should be noted that it did not offer very significant improvements in either task.
+
+It should still be pointed out that this paper introduced the concept of Attention to the problem of ABSC, which then led to further improvements in the coming years.\\
+
+\textit{\textbf{An Unsupervised Neural Attention Model for Aspect Extraction, R. He et al., 2017.}}
+
+This paper identifies 2 main subtasks for AE: (1) extracting the aspect terms from a corpus (such as 'beef', 'rice', 'decor'), and (2) clustering aspect terms into categories (such as 'food', 'service', 'price'). This paper further categorizes the approaches for AE into 3 categories: rule-based, supervised, and unsupervised. Rule-based methods do not usually group aspect terms into categories. Supervised learning methods require data annotation and suffer from domain adaptation problems (cold-start problem as defined above). Unsupervised methods do not need annotation and can derive the aspects from the text directly.
+
+The popular approaches for AE at the time of this paper relied on Latent Dirichlet Allocation (LDA). LDA-based models had the limitation that the individual aspects inferred are often of poor quality. This work attempts to overcome the weaknesses of LDA-based methods by starting with neural word embeddings that map co-occurring words within the same context to nearby points in the embedding space. Then the word embeddings are filtered using an attention mechanism which is then used to derive the aspect embeddings. The authors refer to their approach as Attention-Based Aspect Extraction (ABAE).
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[keepaspectratio, width=0.5\textwidth]{pics/8.png}}
+\caption{A representation of the architecture of the model used by R. He et al. in their study.}
+\label{fig}
+\end{figure}
+
+The approach of this paper is as shown in Figure 8. First the words are transformed into word embeddings, this is beneficial as words that are related are transformed into embeddings that are closer together in the embedding space. Then we use an attention model to calculate the attention of each word. Then we sum up all the word embeddings after multiplying them with their weights to produce the sentence embedding. Once we have the sentence embedding, we reduce that vector by using dimensionality reduction to the number of aspect embeddings. Then the model uses the aspect embeddings to compute the reconstruction of the sentence embedding from the aspect embeddings. The reconstruction describes the aspect as a sum of its aspects. Thus, we first construct an attention-based sentence embedding from the word embeddings, then we extract from it the aspect embeddings so that we can reconstruct the sentence embedding from the aspect embeddings.
+
+The paper correctly concluded a better performance than LDA-based models. However, there was not substantial improvement over the other mainstream models being used such as the $k$-means and the biterm topic model (BTM).
+
+\subsection{2012-2015}
+
+\textit{\textbf{Weakly Supervised Joint Sentiment-Topic Detection from Text, C. Lin et al., 2012.}}
 
 
 
-\textit{\textbf{Aspect Level Sentiment Classification with Deep Memory Network, D. Tang et al, 2016.}}
+\textit{\textbf{Weakly Supervised Joint Sentiment-Topic Detection from Text, C. Lin et al., 2012.}}
 
-\section{Prepare Your Paper Before Styling}
-Before you begin to format your paper, first write and save the content as a 
-separate text file. Complete all content and organizational editing before 
-formatting. Please note sections \ref{AA}--\ref{SCM} below for more information on 
-proofreading, spelling and grammar.
+\textit{\textbf{Weakly Supervised Joint Sentiment-Topic Detection from Text, C. Lin et al., 2012.}}
 
-Keep your text and graphic files separate until after the text has been 
-formatted and styled. Do not number text heads---{\LaTeX} will do that 
-for you.
+\subsection{Before 2011}
 
-\subsection{Abbreviations and Acronyms}\label{AA}
-Define abbreviations and acronyms the first time they are used in the text, 
-even after they have been defined in the abstract. Abbreviations such as 
-IEEE, SI, MKS, CGS, ac, dc, and rms do not have to be defined. Do not use 
-abbreviations in the title or heads unless they are unavoidable.
+\textit{\textbf{Weakly Supervised Joint Sentiment-Topic Detection from Text, C. Lin et al., 2012.}}
 
-\subsection{Units}
-\begin{itemize}
-\item Use either SI (MKS) or CGS as primary units. (SI units are encouraged.) English units may be used as secondary units (in parentheses). An exception would be the use of English units as identifiers in trade, such as ``3.5-inch disk drive''.
-\item Avoid combining SI and CGS units, such as current in amperes and magnetic field in oersteds. This often leads to confusion because equations do not balance dimensionally. If you must use mixed units, clearly state the units for each quantity that you use in an equation.
-\item Do not mix complete spellings and abbreviations of units: ``Wb/m\textsuperscript{2}'' or ``webers per square meter'', not ``webers/m\textsuperscript{2}''. Spell out units when they appear in text: ``. . . a few henries'', not ``. . . a few H''.
-\item Use a zero before decimal points: ``0.25'', not ``.25''. Use ``cm\textsuperscript{3}'', not ``cc''.)
-\end{itemize}
+\textit{\textbf{Weakly Supervised Joint Sentiment-Topic Detection from Text, C. Lin et al., 2012.}}
+
+\textit{\textbf{Weakly Supervised Joint Sentiment-Topic Detection from Text, C. Lin et al., 2012.}}
 
 \subsection{Equations}
 Number equations consecutively. To make your 
@@ -239,87 +261,6 @@ Be sure that the
 symbols in your equation have been defined before or immediately following 
 the equation. Use ``\eqref{eq}'', not ``Eq.~\eqref{eq}'' or ``equation \eqref{eq}'', except at 
 the beginning of a sentence: ``Equation \eqref{eq} is . . .''
-
-\subsection{\LaTeX-Specific Advice}
-
-Please use ``soft'' (e.g., \verb|\eqref{Eq}|) cross references instead
-of ``hard'' references (e.g., \verb|(1)|). That will make it possible
-to combine sections, add equations, or change the order of figures or
-citations without having to go through the file line by line.
-
-Please don't use the \verb|{eqnarray}| equation environment. Use
-\verb|{align}| or \verb|{IEEEeqnarray}| instead. The \verb|{eqnarray}|
-environment leaves unsightly spaces around relation symbols.
-
-Please note that the \verb|{subequations}| environment in {\LaTeX}
-will increment the main equation counter even when there are no
-equation numbers displayed. If you forget that, you might write an
-article in which the equation numbers skip from (17) to (20), causing
-the copy editors to wonder if you've discovered a new method of
-counting.
-
-{\BibTeX} does not work by magic. It doesn't get the bibliographic
-data from thin air but from .bib files. If you use {\BibTeX} to produce a
-bibliography you must send the .bib files. 
-
-{\LaTeX} can't read your mind. If you assign the same label to a
-subsubsection and a table, you might find that Table I has been cross
-referenced as Table IV-B3. 
-
-{\LaTeX} does not have precognitive abilities. If you put a
-\verb|\label| command before the command that updates the counter it's
-supposed to be using, the label will pick up the last counter to be
-cross referenced instead. In particular, a \verb|\label| command
-should not go before the caption of a figure or a table.
-
-Do not use \verb|\nonumber| inside the \verb|{array}| environment. It
-will not stop equation numbers inside \verb|{array}| (there won't be
-any anyway) and it might stop a wanted equation number in the
-surrounding equation.
-
-\subsection{Some Common Mistakes}\label{SCM}
-\begin{itemize}
-\item The word ``data'' is plural, not singular.
-\item The subscript for the permeability of vacuum $\mu_{0}$, and other common scientific constants, is zero with subscript formatting, not a lowercase letter ``o''.
-\item In American English, commas, semicolons, periods, question and exclamation marks are located within quotation marks only when a complete thought or name is cited, such as a title or full quotation. When quotation marks are used, instead of a bold or italic typeface, to highlight a word or phrase, punctuation should appear outside of the quotation marks. A parenthetical phrase or statement at the end of a sentence is punctuated outside of the closing parenthesis (like this). (A parenthetical sentence is punctuated within the parentheses.)
-\item A graph within a graph is an ``inset'', not an ``insert''. The word alternatively is preferred to the word ``alternately'' (unless you really mean something that alternates).
-\item Do not use the word ``essentially'' to mean ``approximately'' or ``effectively''.
-\item In your paper title, if the words ``that uses'' can accurately replace the word ``using'', capitalize the ``u''; if not, keep using lower-cased.
-\item Be aware of the different meanings of the homophones ``affect'' and ``effect'', ``complement'' and ``compliment'', ``discreet'' and ``discrete'', ``principal'' and ``principle''.
-\item Do not confuse ``imply'' and ``infer''.
-\item The prefix ``non'' is not a word; it should be joined to the word it modifies, usually without a hyphen.
-\item There is no period after the ``et'' in the Latin abbreviation ``et al.''.
-\item The abbreviation ``i.e.'' means ``that is'', and the abbreviation ``e.g.'' means ``for example''.
-\end{itemize}
-An excellent style manual for science writers is \cite{b7}.
-
-\subsection{Authors and Affiliations}
-\textbf{The class file is designed for, but not limited to, six authors.} A 
-minimum of one author is required for all conference articles. Author names 
-should be listed starting from left to right and then moving down to the 
-next line. This is the author sequence that will be used in future citations 
-and by indexing services. Names should not be listed in columns nor group by 
-affiliation. Please keep your affiliations as succinct as possible (for 
-example, do not differentiate among departments of the same organization).
-
-\subsection{Identify the Headings}
-Headings, or heads, are organizational devices that guide the reader through 
-your paper. There are two types: component heads and text heads.
-
-Component heads identify the different components of your paper and are not 
-topically subordinate to each other. Examples include Acknowledgments and 
-References and, for these, the correct style to use is ``Heading 5''. Use 
-``figure caption'' for your Figure captions, and ``table head'' for your 
-table title. Run-in heads, such as ``Abstract'', will require you to apply a 
-style (in this case, italic) in addition to the style provided by the drop 
-down menu to differentiate the head from the text.
-
-Text heads organize the topics on a relational, hierarchical basis. For 
-example, the paper title is the primary text head because all subsequent 
-material relates and elaborates on this one topic. If there are two or more 
-sub-topics, the next level head (uppercase Roman numerals) should be used 
-and, conversely, if there are not at least two sub-topics, then no subheads 
-should be introduced.
 
 \subsection{Figures and Tables}
 \paragraph{Positioning Figures and Tables} Place figures and tables at the top and 
@@ -362,34 +303,6 @@ with units. In the example, write ``Magnetization (A/m)'' or ``Magnetization
 quantities and units. For example, write ``Temperature (K)'', not 
 ``Temperature/K''.
 
-\section*{Acknowledgment}
-
-The preferred spelling of the word ``acknowledgment'' in America is without 
-an ``e'' after the ``g''. Avoid the stilted expression ``one of us (R. B. 
-G.) thanks $\ldots$''. Instead, try ``R. B. G. thanks$\ldots$''. Put sponsor 
-acknowledgments in the unnumbered footnote on the first page.
-
-\section*{References}
-
-Please number citations consecutively within brackets \cite{b1}. The 
-sentence punctuation follows the bracket \cite{b2}. Refer simply to the reference 
-number, as in \cite{b3}---do not use ``Ref. \cite{b3}'' or ``reference \cite{b3}'' except at 
-the beginning of a sentence: ``Reference \cite{b3} was the first $\ldots$''
-
-Number footnotes separately in superscripts. Place the actual footnote at 
-the bottom of the column in which it was cited. Do not put footnotes in the 
-abstract or reference list. Use letters for table footnotes.
-
-Unless there are six authors or more give all authors' names; do not use 
-``et al.''. Papers that have not been published, even if they have been 
-submitted for publication, should be cited as ``unpublished'' \cite{b4}. Papers 
-that have been accepted for publication should be cited as ``in press'' \cite{b5}. 
-Capitalize only the first word in a paper title, except for proper nouns and 
-element symbols.
-
-For papers published in translation journals, please give the English 
-citation first, followed by the original foreign-language citation \cite{b6}.
-
 \begin{thebibliography}{00}
 \bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
 \bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
@@ -399,8 +312,4 @@ citation first, followed by the original foreign-language citation \cite{b6}.
 \bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
 \bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
 \end{thebibliography}
-\vspace{12pt}
-\color{red}
-IEEE conference templates contain guidance text for composing and formatting conference papers. Please ensure that all template text is removed from your conference paper prior to submission to the conference. Failure to remove the template text from your paper may result in your paper not being published.
-
 \end{document}
