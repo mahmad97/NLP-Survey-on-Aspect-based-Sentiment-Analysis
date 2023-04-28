@@ -23,14 +23,8 @@ mohammad.ahmad@psu.edu}
 \pagestyle{plain}
 
 \begin{abstract}
-This document is a model and instructions for \LaTeX.
-This and the IEEEtran.cls file define the components of your paper [title, text, heads, etc.]. *CRITICAL: Do Not Use Symbols, Special Characters, Footnotes, 
-or Math in Paper Title or Abstract.
+Aspect-based Sentiment Analysis (ABSA) is a very important field within Natural Language Processing (NLP). It has 2 major tasks which are Aspect Extraction (AE) and Aspect Sentiment Classification (ASC). With the increasing amount of reviews, blogs, articles, and other opinion-based texts which are produced for every possible entity such as places (restaurants, schools), food items, and products; there is no surprise that the stakeholders of these entities value the critical feedback and hope for efficient ways to analyze this large amount of feedback and opinions. From statistical models in the beginning to the neural models of today. From RNN based models to BERT based models. This field has experienced a wide array of techniques. These days we can see the attempt to move from Supervised and Semi-Supervised approaches to Unsupervised ones so that finally the promise of ABSA is realized; to extract aspect specific sentiments without being constrained by labeling and domain. In this paper, the many approaches that have been used over the years to perform ABSA will be explored so that we can derive an understanding and appreciation of how far we have come in our progress in this field.
 \end{abstract}
-
-\begin{IEEEkeywords}
-component, formatting, style, styling, insert
-\end{IEEEkeywords}
 
 \section{Introduction}
 An important area of study within the field of Natural Language Processing (NLP) is Sentiment Analysis (SA). SA is defined as extracting the emotional tone or the expressed polarity in a given text. This is usually done by classifying a given text as expressing a positive, a negative, or a neutral sentiment. A further area of study within SA is Feature-Based or Aspect-Based Sentiment Analysis (ABSA). This refers to the extraction of expressed sentiments about the individual entities or objects within a text.
@@ -38,8 +32,6 @@ An important area of study within the field of Natural Language Processing (NLP)
 The motivation behind studying ABSA is simply that there is no scarcity in the amount of text containing opinions being produced. And it is often too simplistic of an approach to deem an entire text as expressing a positive, a negative, or a neutral opinion. The reality is that within an opinion piece, the writer is usually expressing opinions regarding multiple different aspects or subjects which then build up to the overall opinion being expressed by the text. Though it is valuable to find out the overall opinion being expressed by a text, it is more actionable for a concerned entity of an opinion piece to be able to extract the opinions about the individual aspects mentioned within the text.
 
 Two important subtasks in ABSA are Aspect Extraction (AE) and Aspect Sentiment Classification (ASC). These subtasks have been the point of focus in many studies pertaining to ABSA since their introduction in SemEval 2014, a research workshop on NLP. AE is the subtask in ABSA which focuses on extracting the objects from a given text regarding which a sentiment is being expressed while ASC is the subtask which focuses on classifying the expressed sentiment for each aspect that was extracted.
-
-(Add specific examples of techniques being used in the past and present for ABSA here later)
 
 The aim of this survey is to investigate the a small selection of papers from 4 time intervals and review those papers to ascertain the progress made in the field of ABSA.
 
@@ -52,8 +44,6 @@ Analysis with BERT, A. Karimi et al., 2020.}}
 
 This paper talks about the idea of adversarial training, i.e. introducing noise or perturbations to input such that to a human it would seem as the same input with some noise but a neural network would perceive that as a completely different input and may not classify it correctly. This approach has already been used for sentence classification but not in ABSA.
 
-The models used in this paper is are extensions of the Bidirectional Encoder Representations from Transformers (BERT) model. The input sentences first go through a BERT word embedding layer to encode them. The encoded words are then passed through a BERT encoder following which their loss is calculated using a cross entropy loss function. After this the loss is used to calculate perturbations which are then added to the embeddings to produce input to attack the encoder and force it to give incorrect results. The adversarial loss and the normal loss are summed up to give the overall model loss, which is then minimized using backpropogation. A representation of this model is given by Figure 1. This model was used in both AE and ASC subtasks.
-
 \begin{figure}[htbp]
 \centerline{\includegraphics[keepaspectratio, width=0.45\textwidth]{pics/1.png}}
 \caption{A representation of the model used by A. Karimi et al.}
@@ -64,6 +54,8 @@ The models used in this paper is are extensions of the Bidirectional Encoder Rep
 \centerline{\includegraphics[keepaspectratio, width=\textwidth]{pics/2.png}}
   \caption{A summary of the aims of Y. Qiang at al in this paper.}
 \end{figure*}
+
+The models used in this paper is are extensions of the Bidirectional Encoder Representations from Transformers (BERT) model. The input sentences first go through a BERT word embedding layer to encode them. The encoded words are then passed through a BERT encoder following which their loss is calculated using a cross entropy loss function. After this the loss is used to calculate perturbations which are then added to the embeddings to produce input to attack the encoder and force it to give incorrect results. The adversarial loss and the normal loss are summed up to give the overall model loss, which is then minimized using backpropogation. A representation of this model is given by Figure 1. This model was used in both AE and ASC subtasks.
 
 For the AE subtask, the goal was to assign each word a label so as to specify whether it is the beginning of an aspect, inside an aspect or not in any aspect. For the ASC subtask, the output from the previous subtask is used as input (in the evaluation stage, while the actual true values are utilized in training) with the modification that each text is repeated as many times as there are aspects in it so that the sentiment for each aspect can be classified separately.
 
@@ -162,8 +154,6 @@ The model showed better accuracy as compared to other famous studies operating o
 
 This paper takes inspiration from a question answering using a memory network approach to perform ABSA. The authors have described the problem as searching for a subset of relevant words given an aspect then determining the sentiment of the aspect based on those context words. They claim that their model is better than feature-based Support Vector Machines (SVMs) and attention-based Long Short Term Memory network (LSTM) architectures.
 
-A memory network is a general machine learning framework which comprises of a long-term memory component which can be read and written to and used to help with the task of prediction. A memory network consists of a memory $m$ (which is an array $m$ arrays) and four components $I$, $G$, $O$, and $R$. $I$ converts an input to internal feature representation, $G$ updates the old memory with new input, $O$ generates the output representation given the input and the current memory state, and $R$ converts the output representation to the output.
-
 \begin{figure}[htbp]
 \centerline{\includegraphics[keepaspectratio, width=0.5\textwidth]{pics/6.png}}
 \caption{A representation of the architecture of the model used by D. Tang et al. in their study.}
@@ -174,6 +164,8 @@ A memory network is a general machine learning framework which comprises of a lo
 \centerline{\includegraphics[keepaspectratio, width=\textwidth]{pics/7.png}}
   \caption{A representation of the model used by Y. Wang et al. in their study.}
 \end{figure*}
+
+A memory network is a general machine learning framework which comprises of a long-term memory component which can be read and written to and used to help with the task of prediction. A memory network consists of a memory $m$ (which is an array $m$ arrays) and four components $I$, $G$, $O$, and $R$. $I$ converts an input to internal feature representation, $G$ updates the old memory with new input, $O$ generates the output representation given the input and the current memory state, and $R$ converts the output representation to the output.
 
 The model takes in an as input a sentence and an aspect word from that sentence. Each word is then vectorized to produce a word embedding. For the first layer the aspect vector is used as input to select vectors from the memory using attention. The output of the attention and the linearly transformed aspect vector are then combined to produce the input for the next layer. This process is then repeated as shown in Figure 6, until we can then perform a softmax activation on the final output to perform ASC for the input aspect. Like most models, this model uses backpropogation with stochastic gradient descent to train the network weights.
 
@@ -226,82 +218,70 @@ The popular approaches for AE at the time of this paper relied on Latent Dirichl
 
 The approach of this paper is as shown in Figure 8. First the words are transformed into word embeddings, this is beneficial as words that are related are transformed into embeddings that are closer together in the embedding space. Then we use an attention model to calculate the attention of each word. Then we sum up all the word embeddings after multiplying them with their weights to produce the sentence embedding. Once we have the sentence embedding, we reduce that vector by using dimensionality reduction to the number of aspect embeddings. Then the model uses the aspect embeddings to compute the reconstruction of the sentence embedding from the aspect embeddings. The reconstruction describes the aspect as a sum of its aspects. Thus, we first construct an attention-based sentence embedding from the word embeddings, then we extract from it the aspect embeddings so that we can reconstruct the sentence embedding from the aspect embeddings.
 
-The paper correctly concluded a better performance than LDA-based models. However, there was not substantial improvement over the other mainstream models being used such as the $k$-means and the biterm topic model (BTM).
+The paper correctly concluded a better performance than LDA-based models. However, there was not substantial improvement over the other mainstream models being used such as the $k$-means and the biterm topic model (BTM).\\
 
 \subsection{2012-2015}
 
 \textit{\textbf{Weakly Supervised Joint Sentiment-Topic Detection from Text, C. Lin et al., 2012.}}
 
+The most common approach for SA and ABSA at the time of this paper was LDA as mentioned in the previous review. This paper proposes to extend the LDA approach by adding an additional sentiment layer. The new model is referred to as the weakly supervised joint sentiment-topic (JST) model.
 
+JST was distinguished from the other ABSA models at the time in that it is weakly supervised, so the only supervision comes from a domain independent sentiment lexicon, and that it can detect aspects and sentiments simultaneously. The authors believed that it's weakly supervised nature would make it portable to other domains of SA. The idea behind JST was that aspects are generated based on the sentiment distributions and the words are generated based on the sentiment-aspect pairs.
 
-\textit{\textbf{Weakly Supervised Joint Sentiment-Topic Detection from Text, C. Lin et al., 2012.}}
-
-\textit{\textbf{Weakly Supervised Joint Sentiment-Topic Detection from Text, C. Lin et al., 2012.}}
-
-\subsection{Before 2011}
-
-\textit{\textbf{Weakly Supervised Joint Sentiment-Topic Detection from Text, C. Lin et al., 2012.}}
-
-\textit{\textbf{Weakly Supervised Joint Sentiment-Topic Detection from Text, C. Lin et al., 2012.}}
-
-\textit{\textbf{Weakly Supervised Joint Sentiment-Topic Detection from Text, C. Lin et al., 2012.}}
-
-\subsection{Equations}
-Number equations consecutively. To make your 
-equations more compact, you may use the solidus (~/~), the exp function, or 
-appropriate exponents. Italicize Roman symbols for quantities and variables, 
-but not Greek symbols. Use a long dash rather than a hyphen for a minus 
-sign. Punctuate equations with commas or periods when they are part of a 
-sentence, as in:
-\begin{equation}
-a+b=\gamma\label{eq}
-\end{equation}
-
-Be sure that the 
-symbols in your equation have been defined before or immediately following 
-the equation. Use ``\eqref{eq}'', not ``Eq.~\eqref{eq}'' or ``equation \eqref{eq}'', except at 
-the beginning of a sentence: ``Equation \eqref{eq} is . . .''
-
-\subsection{Figures and Tables}
-\paragraph{Positioning Figures and Tables} Place figures and tables at the top and 
-bottom of columns. Avoid placing them in the middle of columns. Large 
-figures and tables may span across both columns. Figure captions should be 
-below the figures; table heads should appear above the tables. Insert 
-figures and tables after they are cited in the text. Use the abbreviation 
-``Fig.~\ref{fig}'', even at the beginning of a sentence.
-
-\begin{table}[htbp]
-\caption{Table Type Styles}
-\begin{center}
-\begin{tabular}{|c|c|c|c|}
-\hline
-\textbf{Table}&\multicolumn{3}{|c|}{\textbf{Table Column Head}} \\
-\cline{2-4} 
-\textbf{Head} & \textbf{\textit{Table column subhead}}& \textbf{\textit{Subhead}}& \textbf{\textit{Subhead}} \\
-\hline
-copy& More table copy$^{\mathrm{a}}$& &  \\
-\hline
-\multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
-\end{tabular}
-\label{tab1}
-\end{center}
-\end{table}
+The existing LDA model is based on the assumption that a document is a mixture of aspects and each aspect is a probability distribution over words. The LDA model goes through the document and calculates the probability for each word to belong to a certain topic given the document (from a predetermined list of topics). Figure 9 gives a graphical representation of the JST model.
 
 \begin{figure}[htbp]
-\centerline{Picture here}
-\caption{Example of a figure caption.}
+\centerline{\includegraphics[keepaspectratio, width=0.5\textwidth]{pics/9.png}}
+\caption{A graphical representation of the JST model made by C. Lin et al. in their study.}
 \label{fig}
 \end{figure}
 
-Figure Labels: Use 8 point Times New Roman for Figure labels. Use words 
-rather than symbols or abbreviations when writing Figure axis labels to 
-avoid confusing the reader. As an example, write the quantity 
-``Magnetization'', or ``Magnetization, M'', not just ``M''. If including 
-units in the label, present them within parentheses. Do not label axes only 
-with units. In the example, write ``Magnetization (A/m)'' or ``Magnetization 
-\{A[m(1)]\}'', not just ``A/m''. Do not label axes with a ratio of 
-quantities and units. For example, write ``Temperature (K)'', not 
-``Temperature/K''.
+It starts with $S$, the distinct sentiment labels, $T$, the topics, and $D$, a collection of documents. Each document is a list of words from a vocabulary $V$. First, we make a distribution of words for each sentiment-topic pair using the vocabulary. For each document we select a distribution of sentiment labels, then for each label under that document we select a distribution sentiment-topic pairs. Then for each word we select a sentiment label, then a topic, then finally a word from a distribution of words that are related to that topic and sentiment label. Thus, for a given document, its contained topics (aspects) and their sentiments are derived.
+
+This model is an extension and improvement over the baseline LDA model. And as per the results quoted, it does show a significant improvement over the baseline LDA model on the same datasets. The authors also experimented with a reverse-JST model which selected a topic and then a sentiment instead of the other way around. reverse-JST showcased similar results to the JST model.\\
+
+
+\textit{\textbf{Weakly Supervised Joint Sentiment-Topic Detection from Text, C. Lin et al., 2012.}}
+
+\textit{\textbf{Weakly Supervised Joint Sentiment-Topic Detection from Text, C. Lin et al., 2012.}}
+
+\subsection{2011 and Before}
+
+\textit{\textbf{Multi-aspect Sentiment Analysis with Topic Models, B. Lu et al., 2011.}}
+
+hey
+
+halo\\
+
+\textit{\textbf{Weakly Supervised Joint Sentiment-Topic Detection from Text, C. Lin et al., 2012.}}
+
+\textit{\textbf{Sentiment Analyzer: Extracting Sentiments about a Given Topic using Natural Language Processing Techniques, J. Yi et al., 2003.}}
+
+This paper introduces a very early approach to perform ABSA. It correctly identifies the needs and the motivation to perform ABSA, which with time have only grown. This can be seen by the fact that in the 20 years after the publication of this paper, the statements regarding the need for ABSA have only become truer.
+
+This paper introduces a statistical model that takes in a document and extracts from the document topic-specific features. It then extracts all the opinion bearing phrases from the document and deduces their sentiment. Finally it makes the (topic$\mid$feature, sentiment) relations. For example, for the domain of digital camera, a feature is a part of the camera such as the lenses, a feature of the camera such as the price, or a feature of a part of the camera such as the battery life.
+
+The paper identifies that the feature terms are usually nouns and then focuses on these for the feature term extraction algorithm. They tested 3 heuristics for candidate term selection: Base Noun Phrases (BNP),  Definite Base Noun Phrases (dBNP), and Beginning Definite Base Noun Phrases (bBNP). The paper develops 2 algorithms to perform feature extraction, one based on a mixture language model and the other based on likelihood ratio.
+
+In the first algorithm, the authors note that a document can be considered to be generated by a linear combination of the general web language model $\theta_W$ (similar to the corpus language model), and the  topic-specific language model $\theta_T$ (similar to the query model):
+\begin{equation*}
+  \theta = \alpha \theta_W + \beta \theta_T
+\end{equation*}
+where $\theta$, $\theta_W$, and $\theta_T$ are multidimensional distributions over the number of words in the corpus. The idea is to calculate the $\theta_{T_i}$ score for each term in a document. Then the feature terms with their score satisfying some confidence level are selected. For the likelihood test algorithm, we compute the likelihood score for each candidate feature term, and then select the terms which satisfy some confidence level.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[keepaspectratio, width=0.5\textwidth]{pics/14.png}}
+\caption{A comparison of the precision of the different feature term extraction algorithms over the digital camera and the music corpora.}
+\label{fig}
+\end{figure}
+
+As can be seen from Figure 10, the bBNP heuristic with the likelihood score algorithm yielded the best accuracy for feature term extraction.
+
+The actual sentiment analysis part of the feature terms is done by using a sentiment pattern database which matches patterns in the text to defined sentiment patterns and assigns the matches sentiments accordingly. It is easy to see that this statistical approach is a rather primitive compared to the powerful neural models of today and that it will suffer from very high domain adaptability issues and that it might suffer from input such as customer reviews which use informal expression and language which will will make it difficult to capture all sentiment patterns that can occur.
+
+That being said it still performs relatively well on general web documents and news articles as indicated by the results obtained. This points to the ingenuity of this idea of performing ABSA with very limited resources for the time using a statistical model.
+
+\section{Conclusion}
 
 \begin{thebibliography}{00}
 \bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.

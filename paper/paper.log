@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.14)  27 APR 2023 20:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.14)  28 APR 2023 18:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -280,6 +280,9 @@ LaTeX Warning: Label `fig' multiply defined.
 
 LaTeX Warning: Label `fig' multiply defined.
 
+
+LaTeX Warning: Label `fig' multiply defined.
+
 )
 \openout1 = `paper.aux'.
 
@@ -320,114 +323,137 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 (/usr/local/share/miktex-texmf/tex/latex/00miktex/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 26.
-
-
-(/usr/local/share/miktex-texmf/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 26.
-
-
-(/usr/local/share/miktex-texmf/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
 <pics/1.png, id=1, 874.26625pt x 418.56375pt>
 File: pics/1.png Graphic file (type png)
 <use pics/1.png>
-Package pdftex.def Info: pics/1.png  used on input line 58.
+Package pdftex.def Info: pics/1.png  used on input line 48.
 (pdftex.def)             Requested size: 232.19843pt x 111.16794pt.
 <pics/2.png, id=3, 990.70125pt x 384.43625pt>
 File: pics/2.png Graphic file (type png)
 <use pics/2.png>
-Package pdftex.def Info: pics/2.png  used on input line 64.
+Package pdftex.def Info: pics/2.png  used on input line 54.
 (pdftex.def)             Requested size: 516.0pt x 200.23062pt.
  [1{/home/mahmad/.miktex/texmfs/data/fonts/map/pdftex/pdftex.map}
 
 
  <./pics/1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 90--91
+LaTeX Font Info:    Trying to load font information for U+msa on input line 70.
+
+
+(/usr/local/share/miktex-texmf/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 70.
+
+
+(/usr/local/share/miktex-texmf/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
 <pics/3.png, id=13, 560.0925pt x 485.815pt>
 File: pics/3.png Graphic file (type png)
 <use pics/3.png>
-Package pdftex.def Info: pics/3.png  used on input line 100.
+Package pdftex.def Info: pics/3.png  used on input line 92.
 (pdftex.def)             Requested size: 258.0pt x 223.79636pt.
 
-Underfull \vbox (badness 4832) has occurred while \output is active []
+Underfull \vbox (badness 2035) has occurred while \output is active []
 
  [2 <./pics/2.png>]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 1
-20.
+12.
  (/home/mahmad/.miktex/texmfs/install/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
 
  []
 
 <pics/4.png, id=18, 550.055pt x 552.0625pt>
 File: pics/4.png Graphic file (type png)
 <use pics/4.png>
-Package pdftex.def Info: pics/4.png  used on input line 138.
+Package pdftex.def Info: pics/4.png  used on input line 130.
 (pdftex.def)             Requested size: 258.0pt x 258.94713pt.
-<pics/5.png, id=19, 482.80376pt x 682.55pt>
+[3 <./pics/3.png> <./pics/4.png>]
+<pics/5.png, id=24, 482.80376pt x 682.55pt>
 File: pics/5.png Graphic file (type png)
 <use pics/5.png>
-Package pdftex.def Info: pics/5.png  used on input line 146.
+Package pdftex.def Info: pics/5.png  used on input line 138.
 (pdftex.def)             Requested size: 258.0pt x 364.74925pt.
-[3 <./pics/3.png> <./pics/4.png>]
-Underfull \hbox (badness 1577) in paragraph at lines 157--158
+
+Underfull \hbox (badness 1577) in paragraph at lines 149--150
 \OT1/ptm/m/n/10 de-pen-dency type in-for-ma-tion to im-prove ABSA mod-els
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--158
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
 
  []
 
 <pics/6.png, id=25, 608.2725pt x 492.84125pt>
 File: pics/6.png Graphic file (type png)
 <use pics/6.png>
-Package pdftex.def Info: pics/6.png  used on input line 168.
+Package pdftex.def Info: pics/6.png  used on input line 158.
 (pdftex.def)             Requested size: 258.0pt x 209.0449pt.
 <pics/7.png, id=26, 1112.155pt x 607.26875pt>
 File: pics/7.png Graphic file (type png)
 <use pics/7.png>
-Package pdftex.def Info: pics/7.png  used on input line 174.
+Package pdftex.def Info: pics/7.png  used on input line 164.
 (pdftex.def)             Requested size: 516.0pt x 281.75621pt.
 [4 <./pics/5.png> <./pics/6.png>]
-Underfull \hbox (badness 2875) in paragraph at lines 201--202
+Underfull \hbox (badness 2875) in paragraph at lines 193--194
 \OT1/ptm/m/n/10 achieve-ment of this pa-per is in fact the per-for-mance
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 201--202
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
 
  []
 
 [5 <./pics/7.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 213--214
+Underfull \hbox (badness 10000) in paragraph at lines 205--206
 
  []
 
 <pics/8.png, id=37, 545.03625pt x 345.29pt>
 File: pics/8.png Graphic file (type png)
 <use pics/8.png>
-Package pdftex.def Info: pics/8.png  used on input line 222.
+Package pdftex.def Info: pics/8.png  used on input line 214.
 (pdftex.def)             Requested size: 258.0pt x 163.44542pt.
+
+Underfull \hbox (badness 1953) in paragraph at lines 221--222
+\OT1/ptm/m/n/10 LDA-based mod-els. How-ever, there was not sub-stan-tial
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 221--222
+
+ []
+
 [6 <./pics/8.png>]
-LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 3
-02.
+<pics/9.png, id=42, 406.51875pt x 314.17375pt>
+File: pics/9.png Graphic file (type png)
+<use pics/9.png>
+Package pdftex.def Info: pics/9.png  used on input line 234.
+(pdftex.def)             Requested size: 258.0pt x 199.39743pt.
 
-(/home/mahmad/.miktex/texmfs/install/tex/latex/psnfss/omsptm.fd
-File: omsptm.fd 
-)
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 302.
+Underfull \hbox (badness 10000) in paragraph at lines 241--242
 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--255
+
+ []
+
+<pics/14.png, id=43, 477.785pt x 228.855pt>
+File: pics/14.png Graphic file (type png)
+<use pics/14.png>
+Package pdftex.def Info: pics/14.png  used on input line 273.
+(pdftex.def)             Requested size: 258.0pt x 123.57985pt.
+[7 <./pics/9.png> <./pics/14.png>]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -439,7 +465,7 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[7
+[8
 
 ] (paper.aux)
 
@@ -447,24 +473,25 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4324 strings out of 476327
- 67620 string characters out of 5794815
+ 4303 strings out of 476327
+ 67332 string characters out of 5794815
  1865666 words of memory out of 5000000
- 24705 multiletter control sequences out of 15000+600000
- 554961 words of font info for 114 fonts, out of 8000000 for 9000
+ 24691 multiletter control sequences out of 15000+600000
+ 550694 words of font info for 105 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,11n,62p,985b,318s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,9n,62p,1217b,318s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/share/miktex-texmf/fonts/enc/dvips/base/8r.enc}</usr/local/share/
 miktex-texmf/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/share/miktex
--texmf/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/share/miktex-texmf/
-fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/share/miktex-texmf/fonts/ty
-pe1/public/amsfonts/cm/cmsy10.pfb></usr/local/share/miktex-texmf/fonts/type1/ur
-w/times/utmb8a.pfb></usr/local/share/miktex-texmf/fonts/type1/urw/times/utmbi8a
-.pfb></usr/local/share/miktex-texmf/fonts/type1/urw/times/utmr8a.pfb></usr/loca
-l/share/miktex-texmf/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paper.pdf (7 pages, 772825 bytes).
+-texmf/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/share/miktex-texmf/
+fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/share/miktex-texmf/fonts/t
+ype1/public/amsfonts/cm/cmr10.pfb></usr/local/share/miktex-texmf/fonts/type1/pu
+blic/amsfonts/cm/cmsy10.pfb></usr/local/share/miktex-texmf/fonts/type1/urw/time
+s/utmb8a.pfb></usr/local/share/miktex-texmf/fonts/type1/urw/times/utmbi8a.pfb><
+/usr/local/share/miktex-texmf/fonts/type1/urw/times/utmr8a.pfb></usr/local/shar
+e/miktex-texmf/fonts/type1/urw/times/utmri8a.pfb>
+Output written on paper.pdf (8 pages, 832671 bytes).
 PDF statistics:
- 84 PDF objects out of 1000 (max. 8388607)
+ 96 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
