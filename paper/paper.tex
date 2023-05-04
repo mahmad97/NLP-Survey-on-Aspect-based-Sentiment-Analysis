@@ -249,11 +249,71 @@ This model is an extension and improvement over the baseline LDA model. And as p
 
 \textit{\textbf{Multi-aspect Sentiment Analysis with Topic Models, B. Lu et al., 2011.}}
 
-hey
+This paper first describes 2 tasks related to ABSA to investigate. The first is multi-aspect sentence labeling where each sentence in a document is labeled according to the aspects it contains. This can be thought of being a sentence level aspect extraction of sorts. They have proposed a weakly supervised topic modeling approach for this. The second task is multi-aspect rating prediction where the aspect ratings for each review are predicted. A supervised approach using the labeled values and an unsupervised approach using the first task are both experimented on.
 
-halo\\
+4 types of topic models are used to experiment on these approaches. These are: LDA, Local LDA (L-LDA), Multi-grain LDA (MG-LDA), and Segmented Topic Model (STM). The last of these was a relatively new approach which had not been used on sentiment analysis tasks.
 
-\textit{\textbf{Weakly Supervised Joint Sentiment-Topic Detection from Text, C. Lin et al., 2012.}}
+\begin{figure}[htbp]
+\centerline{\includegraphics[keepaspectratio, width=0.5\textwidth]{pics/12.png}}
+\caption{A overview of the architecture of the topic models being used}
+\label{fig}
+\end{figure}
+
+Simply put, topic models want to capture word co-occurrence information to understand hidden topics within a model. LDA and L-LDA are based on a probabilistic generative model which assumes that documents are mixtures over topics. Formally they assume the corpus is generated according to the following:
+\begin{itemize}
+\item For each topic $k$:
+  \begin{itemize}
+  \item Choose word-topic mixture $\phi_k \sim Dir(\beta)$
+  \end{itemize}
+
+\item For each document $d$:
+  \begin{itemize}
+  \item Choose document topic proportions $\theta_d \sim Dir(\alpha)$
+  
+  \item For each word $w$ in document $d$:
+    \begin{itemize}
+    \item Choose topic $z_{d,w} \sim \theta_d$
+    \item Choose word $w \sim \phi_{z_{d,w}}$
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+L-LDA are only different from LDA by them modeling the sentences as documents.
+
+In response to the limitations of the above, MG-LDA models were made which aim to model global topics to correspond to local topics. This can be thought of as the global topics being broad categories and the local topics being items corresponding to those categories. Finally, STM aims to jointly model document and sentence-level topic proportions by using a Poisson Dirichlet Process (PDP). This works as follows:
+\begin{itemize}
+\item Choose document topic proportions $\theta_d \sim Dir(\alpha)$
+
+\item For each sentence $s$:
+  \begin{itemize}
+  \item Choose topic proportions $\theta_s \sim PDP(\theta_d, a, b)$
+  \end{itemize}
+
+\item For each word $w$ in sentence $s$:
+  \begin{itemize}
+    \item Choose topic $z_{d,w} \sim \theta_s$
+    \item Choose word $w \sim \phi_{z_{d,w}}$
+  \end{itemize}
+\end{itemize}
+It can be clearly seen that STM is just an extension of L-LDA that takes into account document level topic distributions instead of just sentence level ones.
+
+For the labeling task, L-LDA was the best performing model out of the 4 compared, but it should be noted that even that did not perform as well as an SVM based model. For the rating prediction task, LDA and L-LDA were the best performing models. They noted that though these models can help some weaker machine learning models in prediction, the performance improvement is negligible for stronger machine learning models.\\
+
+\textit{\textbf{Aspect-Based Opinion Polling
+from Customer Reviews, J. Zhu et al., 2011.}}
+
+This paper explores the task of performing ABSA on free-form text reviews by dividing it into 3 parts: (1) using a Multi-aspect bootstrapping method to learn aspect-related terms from unlabeled data for each given aspect, (2) using an aspect-based sentence segmentation model to divide the sentence into multiple single aspect parts, and (3) passing these segments into an opinion polling algorithm to produce a sentiment for each segment.
+
+This paper talks about a statistical approach to the ABSA problem rather than the many neural or machine learning approaches of today (reasonably so as this was published in 2011). So given a finite set of aspects $A$, a finite set of polarities $P$, a set of $n$ customer reviews $X$, and a score function $\phi$ giving a voting score for each pair $(a,p) \in A \times P$; the goal is to calculate:
+\begin{equation*}
+  \phi (a,p|X) = \frac{\sum_{1 \leq i \leq n} \phi (a,p|x_i)}{n}
+\end{equation*}
+which is the score for every pair of aspect and polarity for each sentence in the corpus.
+
+As the goal of this study is to perform ABSA on unlabeled data without using a machine learning model, they are using a dictionary of keywords to learn the aspect-related terms for each aspect. This is then used to later learn the aspect terms from each sentence. The way this is performed is first some specified aspect-related seed terms are selected based on relevance to the dataset. Then the best terms related to those seed words are selected to form a candidate set. Then using a separate scoring function the best terms from the candidate list are added to the initial seed set to give us our list of words for a particular aspect $a$. The algorithm repeats this process for all the aspects. A score vector is produced for each aspect term corresponding to the set of aspect related terms.
+
+Then the model identifies the aspects in each segments. Given a sentence, an ambiguity score for each aspect term from each aspect with respect to the sentence is calculated. Using this the most probable aspects for a sentence can be identified. As a sentence can contain more than one aspects, a segmentation of a sentence over the most likely aspects is calculated, and then the sentence is segmented accordingly. Then we just use the segments and its identified aspect to produce a sentiment for each segment given its aspect.
+
+The results of this model are not very impressive as compared to the neural models that we have seen so far, but that does not discredit the statistical and algorithmic approach that has been described in this model. For example it might be invaluable for some applications to think of the sentence in term of it's constituent segments and perform a simpler sentiment analysis on them than to think of it in a more complicated way. Furthermore, this paper does successfully describe a semi-supervised approach to the ABSA problem using a relatively simple methodology which is a challenge which ABSA still faces today.\\
 
 \textit{\textbf{Sentiment Analyzer: Extracting Sentiments about a Given Topic using Natural Language Processing Techniques, J. Yi et al., 2003.}}
 
@@ -275,7 +335,7 @@ where $\theta$, $\theta_W$, and $\theta_T$ are multidimensional distributions ov
 \label{fig}
 \end{figure}
 
-As can be seen from Figure 10, the bBNP heuristic with the likelihood score algorithm yielded the best accuracy for feature term extraction.
+As can be seen from Figure CHANGETHIS, the bBNP heuristic with the likelihood score algorithm yielded the best accuracy for feature term extraction.
 
 The actual sentiment analysis part of the feature terms is done by using a sentiment pattern database which matches patterns in the text to defined sentiment patterns and assigns the matches sentiments accordingly. It is easy to see that this statistical approach is a rather primitive compared to the powerful neural models of today and that it will suffer from very high domain adaptability issues and that it might suffer from input such as customer reviews which use informal expression and language which will will make it difficult to capture all sentiment patterns that can occur.
 
