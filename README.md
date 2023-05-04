@@ -14,9 +14,7 @@ An Unsupervised Neural Attention Model for Aspect Extraction - https://aclanthol
 Weakly Supervised Joint Sentiment-Topic Detection from Text - https://ieeexplore.ieee.org/document/5710933 - https://core.ac.uk/download/pdf/12824749.pdf \
 
 
-### Before 2011
+### 2011 and Before
 Multi-aspect Sentiment Analysis with Topic Models - https://ieeexplore.ieee.org/abstract/document/6137364 - https://www.cs.cornell.edu/home/cardie/papers/masa-sentire-2011.pdf \
-Aspect-Based Opinion Polling from Customer Reviews - https://ieeexplore.ieee.org/document/5708129 - \
-An Unsupervised Aspect-Sentiment Model for Online Reviews - https://aclanthology.org/N10-1122.pdf \
-Large-Scale Sentiment Analysis for News and Blogs - https://aclanthology.org/N10-1122.pdf \
+Aspect-Based Opinion Polling from Customer Reviews - https://ieeexplore.ieee.org/document/5708129 - no link to paer, in relevant folder \
 Sentiment analyzer: extracting sentiments about a given topic using natural language processing techniques - https://ieeexplore.ieee.org/document/1250949 - https://my.ece.utah.edu/~ece6534/Spring2015/20150423_wang/wang_supp1.pdf
