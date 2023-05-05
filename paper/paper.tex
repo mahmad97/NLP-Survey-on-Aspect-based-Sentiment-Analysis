@@ -12,7 +12,7 @@
 \title{Survey on Aspect-Based Sentiment Analysis}
 
 \author{\IEEEauthorblockN{Mohammad Ahmad}
-\IEEEauthorblockA{\textit{CS Department - Harrisburg Campus}\\
+\IEEEauthorblockA{\textit{Computer Science Dept. - HBG}\\
 \textit{Pennsylvania State University}\\
 Middletown, USA\\
 mohammad.ahmad@psu.edu}
@@ -222,16 +222,50 @@ The paper correctly concluded a better performance than LDA-based models. Howeve
 
 \subsection{2012-2015}
 
+\textit{\textbf{Genre Specific Aspect Based Sentiment Analysis of Movie Reviews, V. Parkhe et al., 2015.}}
+
+The aim of this study is to develop a Genre-specific model to perform ABSA on movie reviews. The authors wish to produce an unsupervised aspect based model to analyze the reviews by using a context, that is genre specific lexicons. Thus, they have used separate lexicons for each genre to better predict the sentiments being expressed in the reviews.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[keepaspectratio, width=0.5\textwidth]{pics/9.png}}
+\caption{A representation of the model made by V. Parkhe et al. in their study. ABTS = aspect based text separator, SAT = screenplay aspect text, MAT = music aspect text, AAT = acting aspect text, PAT = plot aspect text, MvAT = movie aspect text, DAT = direction aspect text, GSLS-DFM = genre specific lexicon based scoring and driving factor multiplication.}
+\label{fig}
+\end{figure}
+
+The architecture of their approach is described by Figure 9. There were a few issues with the dataset that was used in this study due to which a preprocessing step was required. The authors even had to rely on a separate dataset to for the movie ratings to measure their predictions against as the dataset which they were using only had the text review and no numeric rating or score.
+
+The review text is segmented to produce the different texts as described in Figure 9. ABTS not only takes care of the text separation, but also considers the problem of ambiguity in deciding the class a text segment should belong to. To score all of these separated out texts, the authors showed the realization that the same word can describe a different connotation if used to describe movies of different genres. A list of 500 such common words was made and an orientation score was assigned to each of them for each genre using a method called semantic orientation.
+
+Semantic orientation for a given word, is calculated by finding out the difference between the joint information of the word and some positive oriented words, and the joint information of the word and some negative oriented words. Thus the semantic orientation of a word shows its sentiment. In a given text, this is calculated for each word to produce the genre specific score for each category of text. These are then combined to produce an overall score for the review of a movie.
+
+There was variation in the performance of this model over the categories. For example the model performed much better for the `Drama' genre as compared to the `Horror' genre. Furthermore, though this approach is claimed to be unsupervised, any attempt of adapting this same approach would require too much added effort to be a very feasible solution. But, given that this model is a statistical model and not a neural one, the performance is still reasonable.\\
+
+\textit{\textbf{Aspect Based Sentiment Analysis using Support Vector Machine Classifier, R. Varghese et al., 2013.}}
+
+This paper combines the use of dependency parsing, co-reference resolution, SentiWordNet, and an SVM to achieve its goal of aspect-based sentiment analysis. Figure 10 summarizes the sentiment analysis model presented in this paper. The study is conducted on reviews about selected digital cameras from popular websites such as Amazon.in and ebay.in.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[keepaspectratio, width=0.5\textwidth]{pics/10.png}}
+\caption{The sentiment analysis model presented by R. Varghese et al. in their study.}
+\label{fig}
+\end{figure}
+
+This study presents the idea that a review can sometimes contain sentences which do not present relevant information and should be filtered out so as to reduce the processing overhead. SentiWordNet, which is lexicon library is used for this purpose. The authors have used part-of-speech (POS) tagging to discover the relevant aspects from the text. The training process is used to refine selecting features from the text and discard the non-aspect nouns and features.
+
+This paper proposes the use of co-reference resolution to replace words that are talking about an aspect word with that aspect word itself to help with the classification. This will obviously lead to better classification results for each aspect. They use the Stanford Dependency Parser to extract opinion words and find out which aspect they are related to. Thus the dependency information is used in conjunction with the aspect information to produce the classification. SentiWordNet also helps with assigning opinion or score weights to the extracted opinion to help with the final scoring process.
+
+Finally a SVM is used to classify the sentiment for each aspect. The approach generated reasonably high accuracies given the fact that it was using a just an SVM for the classification. This is due to the fact that the preprocessing steps have been effective in drawing out better relations to make it easier for the classifier to perform its job.\\
+
 \textit{\textbf{Weakly Supervised Joint Sentiment-Topic Detection from Text, C. Lin et al., 2012.}}
 
 The most common approach for SA and ABSA at the time of this paper was LDA as mentioned in the previous review. This paper proposes to extend the LDA approach by adding an additional sentiment layer. The new model is referred to as the weakly supervised joint sentiment-topic (JST) model.
 
 JST was distinguished from the other ABSA models at the time in that it is weakly supervised, so the only supervision comes from a domain independent sentiment lexicon, and that it can detect aspects and sentiments simultaneously. The authors believed that it's weakly supervised nature would make it portable to other domains of SA. The idea behind JST was that aspects are generated based on the sentiment distributions and the words are generated based on the sentiment-aspect pairs.
 
-The existing LDA model is based on the assumption that a document is a mixture of aspects and each aspect is a probability distribution over words. The LDA model goes through the document and calculates the probability for each word to belong to a certain topic given the document (from a predetermined list of topics). Figure 9 gives a graphical representation of the JST model.
+The existing LDA model is based on the assumption that a document is a mixture of aspects and each aspect is a probability distribution over words. The LDA model goes through the document and calculates the probability for each word to belong to a certain topic given the document (from a predetermined list of topics). Figure 11 gives a graphical representation of the JST model.
 
 \begin{figure}[htbp]
-\centerline{\includegraphics[keepaspectratio, width=0.5\textwidth]{pics/9.png}}
+\centerline{\includegraphics[keepaspectratio, width=0.5\textwidth]{pics/11.png}}
 \caption{A graphical representation of the JST model made by C. Lin et al. in their study.}
 \label{fig}
 \end{figure}
@@ -239,11 +273,6 @@ The existing LDA model is based on the assumption that a document is a mixture o
 It starts with $S$, the distinct sentiment labels, $T$, the topics, and $D$, a collection of documents. Each document is a list of words from a vocabulary $V$. First, we make a distribution of words for each sentiment-topic pair using the vocabulary. For each document we select a distribution of sentiment labels, then for each label under that document we select a distribution sentiment-topic pairs. Then for each word we select a sentiment label, then a topic, then finally a word from a distribution of words that are related to that topic and sentiment label. Thus, for a given document, its contained topics (aspects) and their sentiments are derived.
 
 This model is an extension and improvement over the baseline LDA model. And as per the results quoted, it does show a significant improvement over the baseline LDA model on the same datasets. The authors also experimented with a reverse-JST model which selected a topic and then a sentiment instead of the other way around. reverse-JST showcased similar results to the JST model.\\
-
-
-\textit{\textbf{Weakly Supervised Joint Sentiment-Topic Detection from Text, C. Lin et al., 2012.}}
-
-\textit{\textbf{Weakly Supervised Joint Sentiment-Topic Detection from Text, C. Lin et al., 2012.}}
 
 \subsection{2011 and Before}
 
@@ -330,12 +359,12 @@ In the first algorithm, the authors note that a document can be considered to be
 where $\theta$, $\theta_W$, and $\theta_T$ are multidimensional distributions over the number of words in the corpus. The idea is to calculate the $\theta_{T_i}$ score for each term in a document. Then the feature terms with their score satisfying some confidence level are selected. For the likelihood test algorithm, we compute the likelihood score for each candidate feature term, and then select the terms which satisfy some confidence level.
 
 \begin{figure}[htbp]
-\centerline{\includegraphics[keepaspectratio, width=0.5\textwidth]{pics/14.png}}
+\centerline{\includegraphics[keepaspectratio, width=0.5\textwidth]{pics/13.png}}
 \caption{A comparison of the precision of the different feature term extraction algorithms over the digital camera and the music corpora.}
 \label{fig}
 \end{figure}
 
-As can be seen from Figure CHANGETHIS, the bBNP heuristic with the likelihood score algorithm yielded the best accuracy for feature term extraction.
+As can be seen from Figure 13, the bBNP heuristic with the likelihood score algorithm yielded the best accuracy for feature term extraction.
 
 The actual sentiment analysis part of the feature terms is done by using a sentiment pattern database which matches patterns in the text to defined sentiment patterns and assigns the matches sentiments accordingly. It is easy to see that this statistical approach is a rather primitive compared to the powerful neural models of today and that it will suffer from very high domain adaptability issues and that it might suffer from input such as customer reviews which use informal expression and language which will will make it difficult to capture all sentiment patterns that can occur.
 
@@ -343,13 +372,20 @@ That being said it still performs relatively well on general web documents and n
 
 \section{Conclusion}
 
+Therefore we have seen in this survey not only the practices being used for ABSA today, but also older statistics and probability based approaches that were used before neural networks were introduced to the task. We have also explored some methods that have been used to help with the classification steps such as using word relation information, and processing the input to make it easier to extract the aspects. From this we can now appreciate the efforts that have been made in this field.
+
 \begin{thebibliography}{00}
-\bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
-\bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
-\bibitem{b3} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.
-\bibitem{b4} K. Elissa, ``Title of paper if known,'' unpublished.
-\bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
-\bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
-\bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
+\bibitem{b1} A. Karimi, L. Rossi and A. Prati, "Adversarial Training for Aspect-Based Sentiment Analysis with BERT," 2020 25th International Conference on Pattern Recognition (ICPR), Milan, Italy, 2021, pp. 8797-8803, doi: 10.1109/ICPR48806.2021.9412167.
+\bibitem{b2} Y. Qiang, X. Li and D. Zhu, "Toward Tag-free Aspect Based Sentiment Analysis: A Multiple Attention Network Approach," 2020 International Joint Conference on Neural Networks (IJCNN), Glasgow, UK, 2020, pp. 1-8, doi: 10.1109/IJCNN48605.2020.9207426.
+\bibitem{b3} Yuanhe Tian, Guimin Chen, and Yan Song. 2021. Aspect-based Sentiment Analysis with Type-aware Graph Convolutional Networks and Layer Ensemble. In Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, pages 2910–2922, Online. Association for Computational Linguistics.
+\bibitem{b4} Duyu Tang, Bing Qin, and Ting Liu. 2016. Aspect Level Sentiment Classification with Deep Memory Network. In Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing, pages 214–224, Austin, Texas. Association for Computational Linguistics.
+\bibitem{b5} Yequan Wang, Minlie Huang, Xiaoyan Zhu, and Li Zhao. 2016. Attention-based LSTM for Aspect-level Sentiment Classification. In Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing, pages 606–615, Austin, Texas. Association for Computational Linguistics.
+\bibitem{b6} Ruidan He, Wee Sun Lee, Hwee Tou Ng, and Daniel Dahlmeier. 2017. An Unsupervised Neural Attention Model for Aspect Extraction. In Proceedings of the 55th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pages 388–397, Vancouver, Canada. Association for Computational Linguistics.
+\bibitem{b7} C. Lin, Y. He, R. Everson and S. Ruger, "Weakly Supervised Joint Sentiment-Topic Detection from Text," in IEEE Transactions on Knowledge and Data Engineering, vol. 24, no. 6, pp. 1134-1145, June 2012, doi: 10.1109/TKDE.2011.48.
+\bibitem{b8} V. Parkhe and B. Biswas, "Genre Specific Aspect Based Sentiment Analysis of Movie Reviews," 2015 International Conference on Advances in Computing, Communications and Informatics (ICACCI), Kochi, India, 2015, pp. 2418-2422, doi: 10.1109/ICACCI.2015.7275981.
+\bibitem{b9} R. Varghese and M. Jayasree, "Aspect based Sentiment Analysis using support vector machine classifier," 2013 International Conference on Advances in Computing, Communications and Informatics (ICACCI), Mysore, India, 2013, pp. 1581-1586, doi: 10.1109/ICACCI.2013.6637416.
+\bibitem{b10} B. Lu, M. Ott, C. Cardie and B. K. Tsou, "Multi-aspect Sentiment Analysis with Topic Models," 2011 IEEE 11th International Conference on Data Mining Workshops, Vancouver, BC, Canada, 2011, pp. 81-88, doi: 10.1109/ICDMW.2011.125.
+\bibitem{b11} B. Lu, M. Ott, C. Cardie and B. K. Tsou, "Multi-aspect Sentiment Analysis with Topic Models," 2011 IEEE 11th International Conference on Data Mining Workshops, Vancouver, BC, Canada, 2011, pp. 81-88, doi: 10.1109/ICDMW.2011.125.
+\bibitem{b12} J. Yi, T. Nasukawa, R. Bunescu and W. Niblack, "Sentiment analyzer: extracting sentiments about a given topic using natural language processing techniques," Third IEEE International Conference on Data Mining, Melbourne, FL, USA, 2003, pp. 427-434, doi: 10.1109/ICDM.2003.1250949.
 \end{thebibliography}
 \end{document}

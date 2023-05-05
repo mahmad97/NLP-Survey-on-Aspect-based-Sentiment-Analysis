@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.14)  4 MAY 2023 18:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.4.14)  5 MAY 2023 19:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -286,6 +286,12 @@ LaTeX Warning: Label `fig' multiply defined.
 
 LaTeX Warning: Label `fig' multiply defined.
 
+
+LaTeX Warning: Label `fig' multiply defined.
+
+
+LaTeX Warning: Label `fig' multiply defined.
+
 )
 \openout1 = `paper.aux'.
 
@@ -435,44 +441,80 @@ Underfull \hbox (badness 10000) in paragraph at lines 221--222
 
  []
 
-[6 <./pics/8.png>]
-<pics/9.png, id=42, 406.51875pt x 314.17375pt>
+<pics/9.png, id=38, 571.13374pt x 697.60625pt>
 File: pics/9.png Graphic file (type png)
 <use pics/9.png>
-Package pdftex.def Info: pics/9.png  used on input line 234.
-(pdftex.def)             Requested size: 258.0pt x 199.39743pt.
-
+Package pdftex.def Info: pics/9.png  used on input line 230.
+(pdftex.def)             Requested size: 258.0pt x 315.13339pt.
+[6 <./pics/8.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 241--242
 
  []
 
-<pics/12.png, id=43, 464.73625pt x 588.1975pt>
+<pics/10.png, id=43, 572.1375pt x 777.90625pt>
+File: pics/10.png Graphic file (type png)
+<use pics/10.png>
+Package pdftex.def Info: pics/10.png  used on input line 248.
+(pdftex.def)             Requested size: 258.0pt x 350.79051pt.
+[7 <./pics/9.png> <./pics/10.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 257--258
+
+ []
+
+<pics/11.png, id=50, 406.51875pt x 314.17375pt>
+File: pics/11.png Graphic file (type png)
+<use pics/11.png>
+Package pdftex.def Info: pics/11.png  used on input line 268.
+(pdftex.def)             Requested size: 258.0pt x 199.39743pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--276
+
+ []
+
+<pics/12.png, id=51, 464.73625pt x 588.1975pt>
 File: pics/12.png Graphic file (type png)
 <use pics/12.png>
-Package pdftex.def Info: pics/12.png  used on input line 257.
+Package pdftex.def Info: pics/12.png  used on input line 286.
 (pdftex.def)             Requested size: 258.0pt x 326.54323pt.
 
-Underfull \hbox (badness 1748) in paragraph at lines 262--264
+Underfull \hbox (badness 1748) in paragraph at lines 291--293
 []\OT1/ptm/m/n/10 Simply put, topic mod-els want to cap-ture word co-
  []
 
-[7 <./pics/9.png> <./pics/12.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 299--300
+[8 <./pics/11.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 328--329
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 316--317
+Underfull \hbox (badness 10000) in paragraph at lines 345--346
 
  []
 
-[8]
-<pics/14.png, id=60, 477.785pt x 228.855pt>
-File: pics/14.png Graphic file (type png)
-<use pics/14.png>
-Package pdftex.def Info: pics/14.png  used on input line 333.
+[9 <./pics/12.png>]
+<pics/13.png, id=67, 477.785pt x 228.855pt>
+File: pics/13.png Graphic file (type png)
+<use pics/13.png>
+Package pdftex.def Info: pics/13.png  used on input line 362.
 (pdftex.def)             Requested size: 258.0pt x 123.57985pt.
 
+Underfull \hbox (badness 3158) in paragraph at lines 386--387
+[]\OT1/ptm/m/n/8 R. Vargh-ese and M. Jayas-ree, "As-pect based Sen-ti-ment Anal
+-
+ []
+
+
+Underfull \hbox (badness 2134) in paragraph at lines 386--387
+\OT1/ptm/m/n/8 y-sis us-ing sup-port vec-tor ma-chine clas-si-fier," 2013 In-te
+r-na-tional
+ []
+
+
+Underfull \hbox (badness 3601) in paragraph at lines 386--387
+\OT1/ptm/m/n/8 for-mat-ics (ICACCI), Mysore, In-dia, 2013, pp. 1581-1586, doi:
+ []
+
+[10 <./pics/13.png>]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -484,16 +526,18 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[9 <./pics/14.png>] (paper.aux)
+[11
+
+] (paper.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4311 strings out of 476327
- 67441 string characters out of 5794815
+ 4330 strings out of 476327
+ 67670 string characters out of 5794815
  1868666 words of memory out of 5000000
- 24697 multiletter control sequences out of 15000+600000
+ 24714 multiletter control sequences out of 15000+600000
  551801 words of font info for 106 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,9n,62p,1217b,318s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -509,9 +553,9 @@ y7.pfb></usr/local/share/miktex-texmf/fonts/type1/urw/times/utmb8a.pfb></usr/lo
 cal/share/miktex-texmf/fonts/type1/urw/times/utmbi8a.pfb></usr/local/share/mikt
 ex-texmf/fonts/type1/urw/times/utmr8a.pfb></usr/local/share/miktex-texmf/fonts/
 type1/urw/times/utmri8a.pfb>
-Output written on paper.pdf (9 pages, 924966 bytes).
+Output written on paper.pdf (11 pages, 1316242 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
+ 126 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
 
